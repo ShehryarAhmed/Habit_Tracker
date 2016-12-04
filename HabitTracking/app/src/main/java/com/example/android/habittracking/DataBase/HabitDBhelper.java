@@ -4,7 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.android.habittracking.Adapter.HabitAdapter;
+
 import java.net.HttpURLConnection;
+import java.util.ArrayList;
 
 /**
  * Created by android on 12/3/2016.
@@ -37,9 +40,14 @@ public class HabitDBhelper extends SQLiteOpenHelper {
 
     }
 
-    public void deleteALLHabits(){
+    public void deleteALLHabits(ArrayList<HabitDetail> arrayList, HabitAdapter habitAdapter){
         SQLiteDatabase db = this.getWritableDatabase();
+
         db.execSQL("DELETE FROM "+HabitContract.TABLE_NAME);
+
+        arrayList.clear();
+
+        habitAdapter.notifyDataSetChanged();
     }
 }
 

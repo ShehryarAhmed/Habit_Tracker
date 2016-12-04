@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
             // Respond to a click on the "Delete all entries" menu option
             case R.id.show_sale_history:
 
-                mhabitDBhelper.deleteALLHabits();
+                mhabitDBhelper.deleteALLHabits(mhabitArraylist,mhabitAdapter);
 
                 mhabitAdapter = new HabitAdapter(this, displayDatabaseInfo());
 
-                mhabitAdapter.notifyDataSetChanged();
+
 
                 return true;
 
@@ -145,5 +145,7 @@ public class MainActivity extends AppCompatActivity {
         return mhabitArraylist;
 
     }
+
+
 
 }

@@ -17,7 +17,7 @@ import com.example.android.habittracking.DataBase.HabitDBhelper;
  */
 public class getHabitDetail extends AppCompatActivity {
 
-    private EditText mhabitTitle ;
+    private EditText mhabitTitle;
 
     private Button mhabitAddButton;
 
@@ -55,7 +55,7 @@ public class getHabitDetail extends AppCompatActivity {
 
         values.put(HabitContract.HABIT_TITLE, titleString);
 
-        db.insert(HabitContract.TABLE_NAME,null,values);
+        db.insert(HabitContract.TABLE_NAME, null, values);
 
     }
 

@@ -19,13 +19,13 @@ public class HabitDBhelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    public HabitDBhelper(Context context){
-        super(context,DATA_BASE,null,DATABASE_VERSION);
+    public HabitDBhelper(Context context) {
+        super(context, DATA_BASE, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String  CREATE_PRODUCT_TABLE = "CREATE TABLE IF NOT EXISTS "+HabitContract.TABLE_NAME + " ("
+        String CREATE_PRODUCT_TABLE = "CREATE TABLE IF NOT EXISTS " + HabitContract.TABLE_NAME + " ("
                 + HabitContract.mID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + HabitContract.HABIT_TITLE + " TEXT NOT NULL); ";
 
@@ -40,10 +40,10 @@ public class HabitDBhelper extends SQLiteOpenHelper {
 
     }
 
-    public void deleteALLHabits(ArrayList<HabitDetail> arrayList, HabitAdapter habitAdapter){
+    public void deleteALLHabits(ArrayList<HabitDetail> arrayList, HabitAdapter habitAdapter) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.execSQL("DELETE FROM "+HabitContract.TABLE_NAME);
+        db.execSQL("DELETE FROM " + HabitContract.TABLE_NAME);
 
         arrayList.clear();
 
